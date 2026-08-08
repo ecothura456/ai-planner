@@ -19,3 +19,5 @@ ai-planner-backend/.env
 # Logs
 *.log
 ai-planner-backend/src/main/resources/application.properties
+.env
+.env.*
