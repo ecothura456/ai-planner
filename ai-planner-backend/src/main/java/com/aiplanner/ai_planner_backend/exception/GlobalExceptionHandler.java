@@ -1,4 +1,4 @@
-package com.aiplanner.ai_planner_backend.expection;
+package com.aiplanner.ai_planner_backend.exception;
 
 import java.util.HashMap;
 import java.util.Map;
