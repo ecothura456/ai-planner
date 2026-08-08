@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Frontend
+ai-planner-frontend/node_modules/
+ai-planner-frontend/dist/
+ai-planner-frontend/.env
+
+# Backend
+ai-planner-backend/.gradle/
+ai-planner-backend/build/
+ai-planner-backend/.env
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+ai-planner-backend/src/main/resources/application.properties
