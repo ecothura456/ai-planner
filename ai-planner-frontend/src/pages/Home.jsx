@@ -1,265 +1,302 @@
 import { Link } from "react-router-dom";
+import background from "../assets/photos/background.jpg"
 
-export default function Home() {
+function Home() {
   return (
-    <main className="bg-light min-vh-100">
+    <div>
 
-      <section className="container text-center pt-5 pb-4">
-        <span className="badge rounded-pill bg-primary-subtle text-primary px-3 py-2 mb-3">
-          AI-Powered Travel Planning
+      {/* =========================
+          SECTION 1
+      ========================== */}
+     <section
+  className="text-white"
+  style={{
+    backgroundImage: `
+      linear-gradient(
+        rgba(0, 0, 0, 0.02),
+        rgba(0, 0, 0, 0.02)
+      ),
+      url(${background})
+    `,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "650px",
+  }}
+>
+  <div className="container h-100">
+
+    <div
+      className="row align-items-center g-5"
+      style={{ minHeight: "650px" }}
+    >
+
+      {/* LEFT - TEXT */}
+      <div className="col-lg-6">
+
+        <span className="badge bg-primary px-3 py-2 mb-3">
+          ✨ AI Travel Planner
         </span>
 
-        <h1 className="display-3 fw-bold mb-3">
-          Plan Smarter.
+        <h1 className="display-3 fw-bold mb-4">
+          Plan Your Trip.
           <br />
-          Travel Better.
+          Travel Smarter.
         </h1>
 
-        <p className="lead text-secondary mx-auto mb-4"
-           style={{ maxWidth: "720px" }}>
-          Create personalized travel plans with AI based on your destination,
-          budget, interests, and travel preferences.
+        <p className="lead mb-4">
+          Create your perfect travel plan with AI.
+          Choose your destination, budget and interests,
+          and let AI create your itinerary.
         </p>
 
-        <div className="d-flex justify-content-center gap-3 flex-wrap">
-          <Link to="/create" className="btn btn-primary btn-lg px-4">
-            Start Planning
-          </Link>
+        <Link
+          to="/create"
+          className="btn btn-primary btn-lg px-4"
+        >
+          Start Planning →
+        </Link>
 
-          <Link to="/saved-plans" className="btn btn-outline-secondary btn-lg px-4">
-            View Saved Plans
-          </Link>
+      </div>
+
+
+      {/* RIGHT - 3 PHOTOS */}
+      <div className="col-lg-6">
+
+        <div className="row g-3">
+
+          {/* PHOTO 1 */}
+          <div className="col-12">
+            <img
+              src="/images/tokyo.jpg"
+              alt="Tokyo"
+              className="img-fluid rounded-4 shadow"
+              style={{
+                height: "230px",
+                width: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+
+          {/* PHOTO 2 */}
+          <div className="col-6">
+            <img
+              src="/images/kyoto.jpg"
+              alt="Kyoto"
+              className="img-fluid rounded-4 shadow"
+              style={{
+                height: "180px",
+                width: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+
+          {/* PHOTO 3 */}
+          <div className="col-6">
+            <img
+              src="/images/osaka.jpg"
+              alt="Osaka"
+              className="img-fluid rounded-4 shadow"
+              style={{
+                height: "180px",
+                width: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+
         </div>
-      </section>
 
-      <section className="container pb-5">
-        <div className="bg-white rounded-4 shadow-lg p-3 p-lg-4">
+      </div>
 
-          <div className="row g-3">
+    </div>
 
-            {/* LEFT */}
-            <div className="col-lg-3">
-              <div className="border rounded-4 p-3 h-100">
-                <h5 className="fw-bold mb-3">
-                  Plan Your Trip
-                </h5>
+  </div>
+</section>
 
-                <div className="mb-3">
-                  <label className="form-label small text-secondary">
-                    From
-                  </label>
-                  <div className="form-control bg-light">
-                    Tokyo
-                  </div>
-                </div>
 
-                <div className="mb-3">
-                  <label className="form-label small text-secondary">
-                    To
-                  </label>
-                  <div className="form-control bg-light">
-                    Kyoto
-                  </div>
-                </div>
+      {/* =========================
+          SECTION 2
+      ========================== */}
+      <section className="py-5">
+        <div className="container">
 
-                <div className="row g-2 mb-3">
-                  <div className="col-6">
-                    <label className="form-label small text-secondary">
-                      Start
-                    </label>
-                    <div className="form-control bg-light small">
-                      2026-08-10
-                    </div>
-                  </div>
+          <div className="text-center mb-5">
+            <h2 className="fw-bold">
+              Explore Destinations
+            </h2>
 
-                  <div className="col-6">
-                    <label className="form-label small text-secondary">
-                      End
-                    </label>
-                    <div className="form-control bg-light small">
-                      2026-08-12
-                    </div>
-                  </div>
-                </div>
+            <p className="text-secondary">
+              Choose your favorite destination
+            </p>
+          </div>
 
-                <div className="mb-3">
-                  <label className="form-label small text-secondary">
-                    Budget
-                  </label>
-                  <div className="form-control bg-light">
-                    ¥50,000
-                  </div>
-                </div>
 
-                <button className="btn btn-primary w-100">
-                  Generate Plan
-                </button>
-              </div>
-            </div>
+          {/* JAVASCRIPT PHOTO SELECTOR FRAME */}
 
-            {/* CENTER */}
-            <div className="col-lg-6">
-              <div className="border rounded-4 p-3 h-100">
+          <div className="row justify-content-center">
 
-                <div className="d-flex justify-content-between align-items-center mb-4">
-                  <div>
-                    <small className="text-primary fw-semibold">
-                      AI ITINERARY
-                    </small>
+            <div className="col-lg-8">
 
-                    <h4 className="fw-bold mb-0">
-                      Tokyo → Kyoto
-                    </h4>
-                  </div>
+              <div className="card border-0 shadow-sm rounded-4 overflow-hidden">
 
-                  <span className="badge bg-success-subtle text-success">
-                    Ready
-                  </span>
-                </div>
-
-                <div className="mb-4">
-                  <div className="d-flex gap-3">
-                    <div className="fw-bold text-primary">
-                      01
-                    </div>
-
-                    <div>
-                      <h6 className="fw-bold mb-1">
-                        Arrival & Historic Kyoto
-                      </h6>
-
-                      <p className="text-secondary small mb-2">
-                        Visit Fushimi Inari, explore Gion, and enjoy local food.
-                      </p>
-
-                      <div className="rounded-3 bg-light p-3">
-                        <strong>09:00</strong>
-                        <span className="text-secondary ms-2">
-                          Fushimi Inari Shrine
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <div className="d-flex gap-3">
-                    <div className="fw-bold text-primary">
-                      02
-                    </div>
-
-                    <div>
-                      <h6 className="fw-bold mb-1">
-                        Temples & Nature
-                      </h6>
-
-                      <p className="text-secondary small mb-2">
-                        Discover Kiyomizu-dera and peaceful surrounding streets.
-                      </p>
-
-                      <div className="rounded-3 bg-light p-3">
-                        <strong>10:30</strong>
-                        <span className="text-secondary ms-2">
-                          Kiyomizu-dera
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="d-flex gap-3">
-                    <div className="fw-bold text-primary">
-                      03
-                    </div>
-
-                    <div>
-                      <h6 className="fw-bold mb-1">
-                        Arashiyama Day
-                      </h6>
-
-                      <p className="text-secondary small mb-0">
-                        Bamboo forest, river views, and relaxing cafes.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            {/* RIGHT */}
-            <div className="col-lg-3">
-              <div className="border rounded-4 p-3 h-100">
-
-                <h5 className="fw-bold mb-4">
-                  Trip Summary
-                </h5>
-
-                <div className="mb-4">
-                  <small className="text-secondary">
-                    Total Budget
-                  </small>
-
-                  <h3 className="fw-bold mt-1">
-                    ¥50,000
-                  </h3>
-                </div>
-
-                <div className="mb-3">
-                  <small className="text-secondary">
-                    Duration
-                  </small>
-
-                  <div className="fw-semibold">
-                    3 Days
-                  </div>
-                </div>
-
-                <div className="mb-3">
-                  <small className="text-secondary">
-                    Transportation
-                  </small>
-
-                  <div className="fw-semibold">
-                    Train
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <small className="text-secondary">
-                    Interests
-                  </small>
-
-                  <div className="mt-2 d-flex flex-wrap gap-2">
-                    <span className="badge bg-primary-subtle text-primary">
-                      Food
-                    </span>
-
-                    <span className="badge bg-primary-subtle text-primary">
-                      Nature
-                    </span>
-
-                    <span className="badge bg-primary-subtle text-primary">
-                      Temples
-                    </span>
-                  </div>
-                </div>
-
-                <Link
-                  to="/create"
-                  className="btn btn-primary w-100"
+                {/* PHOTO */}
+                <div
+                  className="bg-secondary d-flex justify-content-center align-items-center text-white"
+                  style={{ height: "400px" }}
                 >
-                  Create My Plan
-                </Link>
+                  Destination Photo
+                </div>
+
+
+                {/* CONTENT */}
+                <div className="card-body p-4 text-center">
+
+                  <h3 className="fw-bold">
+                    Tokyo
+                  </h3>
+
+                  <p className="text-secondary">
+                    Discover amazing places in Tokyo.
+                  </p>
+
+
+                  {/* BUTTONS */}
+                  <div className="d-flex justify-content-center gap-3">
+
+                    <button className="btn btn-outline-primary">
+                      ← Previous
+                    </button>
+
+                    <button className="btn btn-primary">
+                      Next →
+                    </button>
+
+                  </div>
+
+                </div>
 
               </div>
+
             </div>
 
           </div>
+
         </div>
       </section>
 
-    </main>
+
+      {/* =========================
+          SECTION 3
+      ========================== */}
+      <section className="py-5 bg-light">
+
+        <div className="container">
+
+          <div className="text-center mb-5">
+
+            <h2 className="fw-bold">
+              Why AI Travel Planner?
+            </h2>
+
+            <p className="text-secondary">
+              Everything you need for a better trip.
+            </p>
+
+          </div>
+
+
+          <div className="row g-4">
+
+            {/* FEATURE 1 */}
+            <div className="col-md-4">
+
+              <div className="card border-0 shadow-sm rounded-4 h-100">
+
+                <div className="card-body p-4 text-center">
+
+                  <div className="fs-1 mb-3">
+                    🤖
+                  </div>
+
+                  <h4 className="fw-bold">
+                    AI Planning
+                  </h4>
+
+                  <p className="text-secondary">
+                    Generate a personalized travel
+                    itinerary using AI.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* FEATURE 2 */}
+            <div className="col-md-4">
+
+              <div className="card border-0 shadow-sm rounded-4 h-100">
+
+                <div className="card-body p-4 text-center">
+
+                  <div className="fs-1 mb-3">
+                    💰
+                  </div>
+
+                  <h4 className="fw-bold">
+                    Budget Management
+                  </h4>
+
+                  <p className="text-secondary">
+                    Plan your trip based on your
+                    available budget.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* FEATURE 3 */}
+            <div className="col-md-4">
+
+              <div className="card border-0 shadow-sm rounded-4 h-100">
+
+                <div className="card-body p-4 text-center">
+
+                  <div className="fs-1 mb-3">
+                    🗺️
+                  </div>
+
+                  <h4 className="fw-bold">
+                    Easy Travel
+                  </h4>
+
+                  <p className="text-secondary">
+                    Organize your trip easily in
+                    one simple application.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
   );
 }
+
+export default Home;

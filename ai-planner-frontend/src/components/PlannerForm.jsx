@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { generateTravelPlan } from "../api/geminiApi";
 import LoadingSpinner from "./LoadingSpinner";
 
-function PlannerForm() {
-  const navigate = useNavigate();
+function PlannerForm({setResult,setPlanData}) {
+  //const navigate = useNavigate();
 
   const [departure, setDeparture] = useState("");
   const [arrival, setArrival] = useState("");
@@ -36,12 +36,14 @@ function PlannerForm() {
 
       const response = await generateTravelPlan(planData);
 
-      navigate("/result", {
-        state: {
-          result: response.data,
-          planData,
-        },
-      });
+      // navigate("/create", {
+      //   state: {
+      //     result: response.data,
+      //     planData,
+      //   },
+      // });
+      setResult(response.data);
+      setPlanData(planData);
     } catch (error) {
       console.error(error);
       if (error.response?.data){
