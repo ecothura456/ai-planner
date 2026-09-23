@@ -66,7 +66,7 @@ function Home() {
           {/* PHOTO 1 */}
           <div className="col-12">
             <img
-              src="/images/tokyo.jpg"
+              src=""
               alt="Tokyo"
               className="img-fluid rounded-4 shadow"
               style={{
@@ -80,7 +80,7 @@ function Home() {
           {/* PHOTO 2 */}
           <div className="col-6">
             <img
-              src="/images/kyoto.jpg"
+              src=""
               alt="Kyoto"
               className="img-fluid rounded-4 shadow"
               style={{
@@ -94,7 +94,7 @@ function Home() {
           {/* PHOTO 3 */}
           <div className="col-6">
             <img
-              src="/images/osaka.jpg"
+              src=""
               alt="Osaka"
               className="img-fluid rounded-4 shadow"
               style={{
