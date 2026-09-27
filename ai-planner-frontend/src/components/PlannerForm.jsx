@@ -11,7 +11,6 @@ function PlannerForm({setResult,setPlanData}) {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [budget, setBudget] = useState("");
-  const [transportation, setTransportation] = useState("Train");
   const [interests, setInterests] = useState("");
   const [additionalRequest, setAdditionalRequest] = useState("");
   const [loading, setLoading] = useState(false);
@@ -26,7 +25,6 @@ function PlannerForm({setResult,setPlanData}) {
       startDate,
       endDate,
       budget: Number(budget),
-      transportation,
       interests,
       additionalRequest,
     };
@@ -124,19 +122,6 @@ function PlannerForm({setResult,setPlanData}) {
           />
         </div>
 
-        <div className="mb-3">
-          <label className="form-label">Transportation</label>
-          <select
-            className="form-select"
-            value={transportation}
-            onChange={(e) => setTransportation(e.target.value)}
-          >
-            <option value="Train">Train</option>
-            <option value="Car">Car</option>
-            <option value="Bus">Bus</option>
-            <option value="Airplane">Airplane</option>
-          </select>
-        </div>
 
         <div className="mb-3">
           <label className="form-label">Interests</label>

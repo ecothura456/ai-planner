@@ -1,0 +1,413 @@
+/* ========================================
+   PAGE
+======================================== */
+
+.create-planner-page {
+  min-height: 100vh;
+  background: #f5f4f1;
+  color: #171717;
+  padding: 0 0 100px;
+}
+
+.planner-page-container {
+  width: min(1500px, 90%);
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   MINI NAV
+======================================== */
+
+.planner-mini-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 30px 0;
+
+  border-bottom: 1px solid #d8d6d0;
+}
+
+.planner-mini-nav a {
+  text-decoration: none;
+  color: #171717;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.back-home {
+  opacity: 0.65;
+}
+
+.back-home:hover {
+  opacity: 1;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.planner-page-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: end;
+  gap: 80px;
+
+  padding: 75px 0 65px;
+}
+
+.planner-eyebrow {
+  margin-bottom: 15px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+  color: #777;
+}
+
+.planner-page-header h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(50px, 5vw, 82px);
+  font-weight: 400;
+
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.planner-page-header h1 em {
+  font-weight: 400;
+}
+
+.planner-header-description {
+  max-width: 400px;
+
+  margin: 0 0 5px;
+
+  color: #777;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   THREE STEPS
+======================================== */
+
+.planner-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.planner-step {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.step-heading {
+  min-height: 120px;
+
+  display: flex;
+  gap: 14px;
+
+  padding: 20px 5px;
+}
+
+.step-number {
+  font-family: Georgia, serif;
+  font-size: 17px;
+}
+
+.step-heading h2 {
+  margin: 0 0 7px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.step-heading p {
+  max-width: 310px;
+
+  margin: 0;
+
+  color: #858585;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.step-content {
+  flex: 1;
+
+  min-height: 590px;
+
+  padding: 32px;
+
+  background: #fff;
+
+  border: 1px solid #e8e6e1;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.035);
+}
+
+
+/* ========================================
+   EMPTY RESULT CARDS
+======================================== */
+
+.empty-step {
+  height: 100%;
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.empty-icon {
+  width: 50px;
+  height: 50px;
+
+  margin-bottom: 22px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #edf3fa;
+  color: #1764a3;
+
+  font-size: 20px;
+}
+
+.empty-step h3 {
+  margin-bottom: 10px;
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.empty-step p {
+  max-width: 250px;
+
+  color: #888;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   BUTTONS INSIDE PLANNER
+======================================== */
+
+.create-planner-page button,
+.create-planner-page .btn-primary {
+  border: none;
+
+  border-radius: 50px;
+
+  padding: 11px 22px;
+
+  background: #1764a3;
+
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.create-planner-page button:hover,
+.create-planner-page .btn-primary:hover {
+  background: #0d4e85;
+
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+.form-step label {
+  color: #252525;
+  font-weight: 500;
+}
+
+.form-step input,
+.form-step select,
+.form-step textarea {
+  width: 100%;
+
+  border: none;
+  border-bottom: 1px solid #d8d5cf
+  ;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  padding: 10px 2px;
+
+    /* softer text */
+  color: #686868;
+  font-weight: 400;
+
+  box-shadow: none;
+
+}
+
+.form-step input:placeholder,
+.form-step select:placeholder,
+.form-step textarea:placeholder {
+  border-color: #aaa7a2;
+
+  outline: none;
+  box-shadow: none;
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.planner-message {
+  margin-top: 20px;
+
+  padding: 12px 15px;
+
+  background: #eef4f9;
+
+  color: #1764a3;
+
+  border-radius: 4px;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   BOTTOM
+======================================== */
+
+.planner-bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: end;
+
+  gap: 80px;
+
+  margin-top: 120px;
+
+  padding-top: 70px;
+
+  border-top: 1px solid #d8d6d0;
+}
+
+.planner-bottom h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(42px, 4vw, 65px);
+
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.planner-bottom h2 em {
+  font-weight: 400;
+}
+
+.planner-bottom > p {
+  max-width: 400px;
+
+  color: #777;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
+
+  .planner-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step-heading {
+    min-height: auto;
+  }
+
+  .step-content {
+    min-height: auto;
+  }
+
+  .empty-step {
+    min-height: 300px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .planner-page-container {
+    width: 92%;
+  }
+
+  .planner-page-header,
+  .planner-bottom {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .planner-page-header {
+    padding: 50px 0;
+  }
+
+  .planner-page-header h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .step-content {
+    padding: 22px;
+  }
+
+  .planner-bottom {
+    margin-top: 70px;
+  }
+}

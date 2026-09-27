@@ -1,291 +1,135 @@
 import { Link } from "react-router-dom";
+import "./Home.css";
 
 function Home() {
   return (
-    <div>
+    <main className="home-page">
 
       {/* =========================
-          SECTION 1
+          HERO
       ========================== */}
-     <section
-  className="text-white"
-  style={{
-    backgroundImage: `
-      linear-gradient(
-        rgba(0, 0, 0, 0.02),
-        rgba(0, 0, 0, 0.02)
-      ),
-      url("https://plus.unsplash.com/premium_photo-1661964177687-57387c2cbd14?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-    `,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    minHeight: "650px",
-  }}
->
-  <div className="container h-100">
+      <section className="travel-hero">
 
-    <div
-      className="row align-items-center g-5"
-      style={{ minHeight: "650px" }}
-    >
-
-      {/* LEFT - TEXT */}
-      <div className="col-lg-6">
-
-        <span className="badge bg-primary px-3 py-2 mb-3">
-          ✨ AI Travel Planner
-        </span>
-
-        <h1 className="display-3 fw-bold mb-4">
-          Plan Your Trip.
-          <br />
-          Travel Smarter.
-        </h1>
-
-        <p className="lead mb-4">
-          Create your perfect travel plan with AI.
-          Choose your destination, budget and interests,
-          and let AI create your itinerary.
-        </p>
-
-        <Link
-          to="/create"
-          className="btn btn-primary btn-lg px-4"
-        >
-          Start Planning →
-        </Link>
-
-      </div>
-
-
-      {/* RIGHT - 3 PHOTOS */}
-      <div className="col-lg-6">
-
-        <div className="row g-3">
-
-          {/* PHOTO 1 */}
-          <div className="col-12">
-            <img
-              src=""
-              alt="Tokyo"
-              className="img-fluid rounded-4 shadow"
-              style={{
-                height: "230px",
-                width: "100%",
-                objectFit: "cover",
-              }}
-            />
-          </div>
-
-          {/* PHOTO 2 */}
-          <div className="col-6">
-            <img
-              src=""
-              alt="Kyoto"
-              className="img-fluid rounded-4 shadow"
-              style={{
-                height: "180px",
-                width: "100%",
-                objectFit: "cover",
-              }}
-            />
-          </div>
-
-          {/* PHOTO 3 */}
-          <div className="col-6">
-            <img
-              src=""
-              alt="Osaka"
-              className="img-fluid rounded-4 shadow"
-              style={{
-                height: "180px",
-                width: "100%",
-                objectFit: "cover",
-              }}
-            />
-          </div>
-
+        {/* Large background title */}
+        <div className="travel-tech-text">
+          AI TRAVEL
         </div>
 
-      </div>
+        {/* Main floating planner window */}
+        <div className="planner-window">
 
-    </div>
-
-  </div>
-</section>
-
-
-      {/* =========================
-          SECTION 2
-      ========================== */}
-      <section className="py-5">
-        <div className="container">
-
-          <div className="text-center mb-5">
-            <h2 className="fw-bold">
-              Explore Destinations
-            </h2>
-
-            <p className="text-secondary">
-              Choose your favorite destination
-            </p>
-          </div>
-
-
-          {/* JAVASCRIPT PHOTO SELECTOR FRAME */}
-
-          <div className="row justify-content-center">
-
-            <div className="col-lg-8">
-
-              <div className="card border-0 shadow-sm rounded-4 overflow-hidden">
-
-                {/* PHOTO */}
-                <div
-                  className="bg-secondary d-flex justify-content-center align-items-center text-white"
-                  style={{ height: "400px" }}
-                >
-                  Destination Photo
-                </div>
-
-
-                {/* CONTENT */}
-                <div className="card-body p-4 text-center">
-
-                  <h3 className="fw-bold">
-                    Tokyo
-                  </h3>
-
-                  <p className="text-secondary">
-                    Discover amazing places in Tokyo.
-                  </p>
-
-
-                  {/* BUTTONS */}
-                  <div className="d-flex justify-content-center gap-3">
-
-                    <button className="btn btn-outline-primary">
-                      ← Previous
-                    </button>
-
-                    <button className="btn btn-primary">
-                      Next →
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-
+          {/* Fake browser top bar */}
+          <div className="planner-topbar">
+            <div className="planner-logo">
+              ✈ AI Planner
             </div>
 
+            <div className="planner-nav">
+              <a href="#home">Home</a>
+              <a href="#features">Features</a>
+              <a href="#about">About</a>
+            </div>
+
+            <Link to="/create" className="small-plan-btn">
+              Start Planning
+            </Link>
           </div>
 
+          {/* Hero content inside window */}
+          <div className="planner-content" id="home">
+
+            <span className="ai-badge">
+              ✦ AI Powered Travel Planning
+            </span>
+
+            <h1>
+              Your AI trip planner
+              <br />
+              in one click
+            </h1>
+
+            <p>
+              Tell us where you want to go, your budget and
+              interests. AI will create a personalized travel
+              itinerary just for you.
+            </p>
+
+            <Link to="/create" className="hero-plan-btn">
+              Start Planning →
+            </Link>
+
+          </div>
         </div>
+
+        {/* Bottom mountain overlay */}
+        <div className="mountain-overlay"></div>
+
       </section>
 
 
       {/* =========================
-          SECTION 3
+          FEATURES
       ========================== */}
-      <section className="py-5 bg-light">
+      <section className="features-section" id="features">
 
         <div className="container">
 
           <div className="text-center mb-5">
+            <span className="section-label">
+              WHY AI PLANNER?
+            </span>
 
-            <h2 className="fw-bold">
-              Why AI Travel Planner?
+            <h2 className="fw-bold mt-2">
+              Travel smarter with AI
             </h2>
 
             <p className="text-secondary">
-              Everything you need for a better trip.
+              Everything you need to create your perfect trip.
             </p>
-
           </div>
 
 
           <div className="row g-4">
 
-            {/* FEATURE 1 */}
             <div className="col-md-4">
+              <div className="feature-card">
+                <div className="feature-icon">✦</div>
 
-              <div className="card border-0 shadow-sm rounded-4 h-100">
+                <h4>AI Planning</h4>
 
-                <div className="card-body p-4 text-center">
-
-                  <div className="fs-1 mb-3">
-                    🤖
-                  </div>
-
-                  <h4 className="fw-bold">
-                    AI Planning
-                  </h4>
-
-                  <p className="text-secondary">
-                    Generate a personalized travel
-                    itinerary using AI.
-                  </p>
-
-                </div>
-
+                <p>
+                  Generate personalized travel itineraries
+                  based on your destination and interests.
+                </p>
               </div>
-
             </div>
 
 
-            {/* FEATURE 2 */}
             <div className="col-md-4">
+              <div className="feature-card">
+                <div className="feature-icon">💰</div>
 
-              <div className="card border-0 shadow-sm rounded-4 h-100">
+                <h4>Budget Friendly</h4>
 
-                <div className="card-body p-4 text-center">
-
-                  <div className="fs-1 mb-3">
-                    💰
-                  </div>
-
-                  <h4 className="fw-bold">
-                    Budget Management
-                  </h4>
-
-                  <p className="text-secondary">
-                    Plan your trip based on your
-                    available budget.
-                  </p>
-
-                </div>
-
+                <p>
+                  Create travel plans that match your
+                  available budget.
+                </p>
               </div>
-
             </div>
 
 
-            {/* FEATURE 3 */}
             <div className="col-md-4">
+              <div className="feature-card">
+                <div className="feature-icon">✈</div>
 
-              <div className="card border-0 shadow-sm rounded-4 h-100">
+                <h4>Easy Travel</h4>
 
-                <div className="card-body p-4 text-center">
-
-                  <div className="fs-1 mb-3">
-                    🗺️
-                  </div>
-
-                  <h4 className="fw-bold">
-                    Easy Travel
-                  </h4>
-
-                  <p className="text-secondary">
-                    Organize your trip easily in
-                    one simple application.
-                  </p>
-
-                </div>
-
+                <p>
+                  Keep your itinerary organized in one
+                  simple application.
+                </p>
               </div>
-
             </div>
 
           </div>
@@ -294,7 +138,7 @@ function Home() {
 
       </section>
 
-    </div>
+    </main>
   );
 }
 
