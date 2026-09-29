@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import PlannerForm from "../components/PlannerForm";
 import PlanResult from "../components/PlanResult";
 import PlanSummary from "../components/PlanSummary";
 import { createPlan } from "../api/planApi";
+import "./CreatePlanner.css";
 
 function CreatePlanner() {
-
   const [result, setResult] = useState(null);
   const [planData, setPlanData] = useState(null);
   const [saving, setSaving] = useState(false);
@@ -16,120 +17,217 @@ function CreatePlanner() {
       setMessage("Please generate a travel plan first.");
       return;
     }
+
     const planToSave = {
       ...planData,
       budget: Number(planData.budget),
       aiResult: result,
     };
+
     try {
       setSaving(true);
       setMessage("");
+
       await createPlan(planToSave);
-      setMessage("✅ Plan saved successfully!");
+
+      setMessage("✓ Plan saved successfully!");
     } catch (error) {
       console.error(error);
-      setMessage("❌ Failed to save the plan.");
+      setMessage("Failed to save the plan.");
     } finally {
       setSaving(false);
     }
   };
 
   return (
-    <div className="container-fluid bg-light min-vh-100 py-4">
-      <div className="container">
+    <main className="create-planner-page">
 
-        {/* Page Header */}
-        <div className="text-center mb-4">
-          <h2 className="fw-bold">AI Travel Planner</h2>
-          <p className="text-muted">
-            Create your travel plan with AI
-          </p>
+      {/* TOP */}
+      <div className="planner-page-container">
+
+        <div className="planner-mini-nav">
+          <Link to="/">✈ AI Planner</Link>
+
+          <Link to="/" className="back-home">
+            Back to home ↗
+          </Link>
         </div>
 
-        {/* 3 Columns */}
-        <div className="row g-4">
+        {/* HEADER */}
+        <header className="planner-page-header">
 
-          {/* Column 1 - Planner Form */}
-          <div className="col-12 col-lg-4">
-            <div className="card h-100 border-0 shadow-sm rounded-4">
+          <div>
+            <p className="planner-eyebrow">
+              AI TRAVEL PLANNER
+            </p>
 
-              <div className="card-header bg-white border-0 pt-4 px-4">
-                <h4 className="fw-bold mb-1">
-                  Create Plan
-                </h4>
-
-                <p className="text-muted small mb-0">
-                  Enter your travel information
-                </p>
-              </div>
-
-              <div className="card-body p-4">
-                <PlannerForm
-                  setResult={setResult}
-                  setPlanData={setPlanData}
-                />
-              </div>
-
-            </div>
+            <h1>
+              Plan Your Dream Trip
+              <br />
+              <em>in 3 Easy Steps</em>
+            </h1>
           </div>
 
-          {/* Column 2 - Plan Result */}
-          <div className="col-12 col-lg-4">
-            <div className="card h-100 border-0 shadow-sm rounded-4">
+          <p className="planner-header-description">
+            Simply tell us where you're going and what you love.
+            Our AI will create a personalized itinerary made
+            just for you.
+          </p>
 
-              <div className="card-header bg-white border-0 pt-4 px-4">
-                <h4 className="fw-bold mb-1">
-                  Plan Result
-                </h4>
+        </header>
 
-                <p className="text-muted small mb-0">
-                  Your AI-generated travel plan
+
+        {/* THREE STEPS */}
+        <section className="planner-steps">
+
+          {/* STEP 1 */}
+          <article className="planner-step">
+
+            <div className="step-heading">
+              <span className="step-number">1.</span>
+
+              <div>
+                <h2>Tell Us About Your Trip</h2>
+
+                <p>
+                  Share your destination, dates,
+                  budget and travel preferences.
                 </p>
               </div>
+            </div>
 
-              <div className="card-body p-4">
-                <PlanResult
-                  result={result} />
+            <div className="step-content form-step">
+              <PlannerForm
+                setResult={setResult}
+                setPlanData={setPlanData}
+              />
+            </div>
+
+          </article>
+
+
+          {/* STEP 2 */}
+          <article className="planner-step">
+
+            <div className="step-heading">
+              <span className="step-number">2.</span>
+
+              <div>
+                <h2>Let AI Create Your Itinerary</h2>
+
+                <p>
+                  AI builds a personalized travel
+                  plan based on your choices.
+                </p>
               </div>
+            </div>
+
+            <div className="step-content result-step">
+
+              {!result && (
+                <div className="empty-step">
+
+                  <span className="empty-icon">✦</span>
+
+                  <h3>Your itinerary starts here</h3>
+
+                  <p>
+                    Complete your trip details and let AI
+                    design your journey.
+                  </p>
+
+                </div>
+              )}
+
+              {result && (
+                <PlanResult result={result} />
+              )}
 
             </div>
-          </div>
 
-          {/* Column 3 - Plan Summary */}
-          <div className="col-12 col-lg-4">
-            <div className="card h-100 border-0 shadow-sm rounded-4">
+          </article>
 
-              <div className="card-header bg-white border-0 pt-4 px-4">
-                <h4 className="fw-bold mb-1">
-                  Plan Summary
-                </h4>
 
-                <p className="text-muted small mb-0">
-                  Trip and budget summary
+          {/* STEP 3 */}
+          <article className="planner-step">
+
+            <div className="step-heading">
+              <span className="step-number">3.</span>
+
+              <div>
+                <h2>Customize, Save & Explore</h2>
+
+                <p>
+                  Review your trip, save your plan
+                  and get ready to explore.
                 </p>
               </div>
+            </div>
 
-              <div className="card-body p-4">
+            <div className="step-content summary-step">
+
+              {!planData && (
+                <div className="empty-step">
+
+                  <span className="empty-icon">⌖</span>
+
+                  <h3>Your trip summary</h3>
+
+                  <p>
+                    Your destination and budget summary
+                    will appear here.
+                  </p>
+
+                </div>
+              )}
+
+              {planData && (
                 <PlanSummary
                   plan={planData}
                   onSave={handleSave}
-                  saving={saving} />
-              </div>
+                  saving={saving}
+                />
+              )}
 
               {message && (
-                <div className="mt-4">
-                  <div className="alert alert-info">
-                    {message}
-                  </div>
+                <div className="planner-message">
+                  {message}
                 </div>
               )}
 
             </div>
+
+          </article>
+
+        </section>
+
+
+        {/* BOTTOM SECTION */}
+        <section className="planner-bottom">
+
+          <div>
+            <p className="planner-eyebrow">
+              BUILT FOR BETTER TRAVEL
+            </p>
+
+            <h2>
+              Everything You Need to
+              <br />
+              <em>Plan Smarter Trips</em>
+            </h2>
           </div>
 
-        </div>
+          <p>
+            From personalized itineraries to budget-friendly
+            planning, AI Planner makes organizing your next
+            adventure simple.
+          </p>
+
+        </section>
+
       </div>
-    </div>
+
+    </main>
   );
 }
 
