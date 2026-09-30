@@ -27,6 +27,9 @@ function Home() {
             <div className="planner-nav">
               <a href="#home">Home</a>
               <a href="#features">Features</a>
+               <Link to="/saved-plans" >
+              Plans
+            </Link>
               <a href="#about">About</a>
             </div>
 
