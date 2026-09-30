@@ -22,7 +22,7 @@ public class TravelPlanRequest {
     @NotNull(message = "Budget is required.")
     @Positive(message = "Budget must be greater than 0.")
     private Double budget;
-    @NotBlank(message = "Transportation is required.")
+    //@NotBlank(message = "Transportation is required.")
     private String transportation;
     private String interests;
     private String additionalRequest;
