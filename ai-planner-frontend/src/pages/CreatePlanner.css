@@ -36,6 +36,12 @@
   font-weight: 600;
 }
 
+.planner-mini-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
 .back-home {
   opacity: 0.65;
 }
@@ -392,6 +398,10 @@
   .planner-bottom {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  .planner-mini-links {
+    gap: 16px;
   }
 
   .planner-page-header {

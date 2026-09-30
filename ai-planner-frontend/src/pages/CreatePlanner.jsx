@@ -48,9 +48,14 @@ function CreatePlanner() {
         <div className="planner-mini-nav">
           <Link to="/">✈ AI Planner</Link>
 
-          <Link to="/" className="back-home">
-            Back to home ↗
-          </Link>
+          <div className="planner-mini-links">
+            <Link to="/saved-plans" className="back-home">
+              Saved Plans
+            </Link>
+            <Link to="/" className="back-home">
+              Back to home ↗
+            </Link>
+          </div>
         </div>
 
         {/* HEADER */}
